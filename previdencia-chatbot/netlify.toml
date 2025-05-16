@@ -1,7 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "echo 'Skipping build step'"
   publish = "dist"
 
+# Mantenha todos os headers e redirects como estão
 [[headers]]
   for = "/*"
   [headers.values]
@@ -17,6 +18,11 @@
 
 [[headers]]
   for = "/*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/*.jsx"
   [headers.values]
     Content-Type = "application/javascript; charset=utf-8"
 
